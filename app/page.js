@@ -26,10 +26,9 @@ export default function Home() {
                 <h3 className='mt-6'>10. mai 2025</h3>
             </div>
 
-            {/* Seksjon for informasjon */}
-            <section className='flex flex-col lg:flex-row justify-center items-stretch gap-8 px-4'>
+            <section className='grid grid-cols-1 lg:grid-cols-2 gap-8 px-4'>
                 {/* Informasjon om gudstjenesten */}
-                <div className='bg-purple py-6 px-4 rounded-lg shadow-md w-full max-w-md self-center flex flex-col'>
+                <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
                             Informasjon om Gudstjenesten
@@ -42,13 +41,12 @@ export default function Home() {
                         </p>
                     </div>
                     <div className='w-full h-64 flex-grow'>
-                        {/* ChurchMap-komponenten */}
                         <ChurchMap location={churchLocation} mapId='church' />
                     </div>
                 </div>
 
                 {/* Informasjon om selskapet */}
-                <div className='bg-purple py-6 px-4 rounded-lg shadow-md w-full max-w-md self-center flex flex-col'>
+                <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
                             Informasjon om selskap
@@ -63,7 +61,6 @@ export default function Home() {
                         </p>
                     </div>
                     <div className='w-full h-64 flex-grow'>
-                        {/* PartyMap-komponenten */}
                         <PartyMap location={partyLocation} mapId='party' />
                     </div>
                 </div>
