@@ -1,6 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic"; // Viktig import av dynamic
+import RSVPForm from "../components/RSVPForm";
 
 // Dynamisk import av kartkomponentene, med SSR deaktivert
 const ChurchMap = dynamic(() => import("../components/ChurchMap"), {
@@ -64,6 +65,12 @@ export default function Home() {
                         <PartyMap location={partyLocation} mapId='party' />
                     </div>
                 </div>
+            </section>
+            <section className='mt-12'>
+                <h2 className='text-2xl text-center font-bold text-purple-800'>
+                    Send inn din RSVP
+                </h2>
+                <RSVPForm />
             </section>
         </>
     );
