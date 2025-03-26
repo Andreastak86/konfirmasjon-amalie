@@ -37,7 +37,6 @@ export default function RSVPForm() {
             onSubmit={handleSubmit}
             className='max-w-md mx-auto p-4 bg-purple-100 rounded-lg shadow-md'
         >
-            <h2 className='text-xl font-bold text-purple-700 mb-4'>RSVP</h2>
             <div className='mb-4'>
                 <label htmlFor='name' className='block text-purple-600'>
                     Navn:
@@ -89,6 +88,7 @@ export default function RSVPForm() {
                     name='allergies'
                     value={formData.allergies}
                     onChange={handleChange}
+                    placeholder='Skriv inn eventuelle matallergier her'
                     className='w-full p-2 border border-purple-300 rounded'
                 />
             </div>

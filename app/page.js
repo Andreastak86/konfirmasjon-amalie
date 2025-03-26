@@ -67,8 +67,9 @@ export default function Home() {
                 </div>
             </section>
             <section className='mt-12'>
-                <h2 className='text-2xl text-center font-bold text-purple-800'>
-                    Send inn din RSVP
+                <h2 className='text-xl text-center font-bold text-purple-800 py-4 px-1'>
+                    Vennligst legg inn navn og antall personer som kommer, og
+                    eventuelle allergier.
                 </h2>
                 <RSVPForm />
             </section>
