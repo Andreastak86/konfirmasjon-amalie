@@ -1,9 +1,9 @@
 "use client";
 
-import dynamic from "next/dynamic"; // Viktig import av dynamic
+import dynamic from "next/dynamic";
 import RSVPForm from "../components/RSVPForm";
+import Typewriter from "@/components/typeWriter";
 
-// Dynamisk import av kartkomponentene, med SSR deaktivert
 const ChurchMap = dynamic(() => import("../components/ChurchMap"), {
     ssr: false,
 });
@@ -12,23 +12,20 @@ const PartyMap = dynamic(() => import("../components/PartyMap"), {
 });
 
 export default function Home() {
-    // Koordinater for kirke og selskap
     const churchLocation = [60.18704540777896, 5.469533970767009];
     const partyLocation = [60.38231730841425, 5.326818988738677];
 
     return (
         <>
-            {/* Header med velkomsttekst */}
-            <div className='flex flex-col items-center py-2 text-3xl text-text-dark font-bold my-6'>
-                <h3 className='text-center mb-6'>
-                    Vi ønsker dere velkommen til å feire:
-                </h3>
-                <h1>Amalie sin konfirmasjon</h1>
-                <h3 className='mt-6'>10. mai 2025</h3>
+            <h1 className='text-text-dark text-3xl md:text-5xl font-mono text-center mt-6 '>
+                Konfirmasjon{" "}
+            </h1>
+            <div className='flex flex-col items-center text-text-dark font-bold'>
+                <Typewriter />
             </div>
 
-            <section className='grid grid-cols-1 lg:grid-cols-2 gap-8 px-4'>
-                {/* Informasjon om gudstjenesten */}
+            {/* Sekjon for kartene */}
+            <section className='grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 my-12'>
                 <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
@@ -46,7 +43,6 @@ export default function Home() {
                     </div>
                 </div>
 
-                {/* Informasjon om selskapet */}
                 <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
@@ -66,12 +62,18 @@ export default function Home() {
                     </div>
                 </div>
             </section>
+
+            {/* Sekjon for RSVP-formen */}
             <section className='mt-12'>
                 <h2 className='text-xl text-center font-bold text-purple-800 py-4 px-1'>
                     Vennligst legg inn navn og antall personer som kommer, og
                     eventuelle allergier.
                 </h2>
-                <RSVPForm />
+                <div className='flex justify-center my-6'>
+                    <div className='w-full max-w-3xl'>
+                        <RSVPForm />
+                    </div>
+                </div>
             </section>
         </>
     );
