@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import RSVPForm from "../components/RSVPForm";
 import Typewriter from "@/components/typeWriter";
+import Image from "next/image";
 
 const ChurchMap = dynamic(() => import("../components/ChurchMap"), {
     ssr: false,
@@ -17,9 +18,26 @@ export default function Home() {
 
     return (
         <>
-            <h1 className='text-text-dark text-3xl md:text-5xl font-mono text-center mt-6 '>
+            <h1 className='text-text-dark text-3xl lg:text-7xl font-bold text-center mt-6 '>
                 Konfirmasjon{" "}
             </h1>
+
+            <div className='flex justify-center my-6 w-full'>
+                <div className='relative w-64 h-64 overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-300 ring-opacity-50'>
+                    <Image
+                        src='/amalie.jpg'
+                        alt='Konfirmantbilde'
+                        fill
+                        sizes='(max-width: 768px) 100vw, 300px'
+                        style={{
+                            objectFit: "cover",
+                            filter: "drop-shadow(0 10px 8px rgb(107 33 168 / 0.1))",
+                        }}
+                        className='hover:scale-105 transition-transform duration-300'
+                        priority
+                    />
+                </div>
+            </div>
             <div className='flex flex-col items-center text-text-dark font-bold'>
                 <Typewriter />
             </div>
