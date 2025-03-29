@@ -14,11 +14,11 @@ const PartyMap = dynamic(() => import("../components/PartyMap"), {
 
 export default function Home() {
     const churchLocation = [60.18704540777896, 5.469533970767009];
-    const partyLocation = [60.38231730841424, 5.326818988738677];
+    const partyLocation = [60.38231730841425, 5.326818988738677];
 
     return (
         <>
-            <h1 className='text-text-dark text-3xl lg:text-7xl font-bold text-center mt-6 '>
+            <h1 className='text-text-dark text-3xl lg:text-7xl font-bold text-center mt-6'>
                 Konfirmasjon{" "}
             </h1>
 
@@ -44,7 +44,7 @@ export default function Home() {
 
             {/* Sekjon for kartene */}
             <section className='grid grid-cols-1 lg:grid-cols-2 gap-8 px-4 my-12'>
-                <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
+                <div className='bg-gradient-to-br from-purple-200 to-purple-400 py-6 px-4 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 ring-4 ring-purple-500 ring-opacity-50'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
                             Informasjon om Gudstjenesten
@@ -56,12 +56,12 @@ export default function Home() {
                             Vær ute i god tid, da det fylles fort opp!
                         </p>
                     </div>
-                    <div className='w-full h-64 flex-grow'>
+                    <div className='w-full h-64 flex-grow rounded-lg shadow-lg'>
                         <ChurchMap location={churchLocation} mapId='church' />
                     </div>
                 </div>
 
-                <div className='bg-purple py-6 px-4 rounded-lg shadow-md flex flex-col'>
+                <div className='bg-gradient-to-br from-purple-200 to-purple-400 py-6 px-4 rounded-lg shadow-xl transform hover:scale-105 transition-transform duration-300 ring-4 ring-purple-500 ring-opacity-50'>
                     <div className='text-center'>
                         <h2 className='text-2xl font-bold text-purple-800 mb-4'>
                             Informasjon om selskap
@@ -75,7 +75,7 @@ export default function Home() {
                             parkeringshuset ved VilVite.
                         </p>
                     </div>
-                    <div className='w-full h-64 flex-grow'>
+                    <div className='w-full h-64 flex-grow rounded-lg shadow-lg'>
                         <PartyMap location={partyLocation} mapId='party' />
                     </div>
                 </div>
