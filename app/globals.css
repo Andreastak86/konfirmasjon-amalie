@@ -32,7 +32,7 @@ body {
     background-attachment: fixed; /* Sørger for at bakgrunnen ikke ruller med innholdet */
     background-size: cover; /* Dekker hele skjermen */
     color: var(--foreground);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Playfair Display, sans-serif;
     margin: 0; /* Fjern margin for å unngå visuelle hopp */
     min-height: 100vh; /* Sikrer at hele viewport-høyden dekkes */
 }
