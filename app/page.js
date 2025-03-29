@@ -14,7 +14,7 @@ const PartyMap = dynamic(() => import("../components/PartyMap"), {
 
 export default function Home() {
     const churchLocation = [60.18704540777896, 5.469533970767009];
-    const partyLocation = [60.38231730841425, 5.326818988738677];
+    const partyLocation = [60.38231730841424, 5.326818988738677];
 
     return (
         <>
@@ -23,17 +23,17 @@ export default function Home() {
             </h1>
 
             <div className='flex justify-center my-6 w-full'>
-                <div className='relative w-64 h-64 overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-300 ring-opacity-50'>
+                <div className='relative w-64 h-64 sm:w-64 sm:h-64 overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-300 ring-opacity-50'>
                     <Image
                         src='/amalie.jpg'
                         alt='Konfirmantbilde'
                         fill
-                        sizes='(max-width: 768px) 100vw, 300px'
+                        sizes='(max-width: 640px) 100vw, 256px'
                         style={{
                             objectFit: "cover",
                             filter: "drop-shadow(0 10px 8px rgb(107 33 168 / 0.1))",
                         }}
-                        className='hover:scale-105 transition-transform duration-300'
+                        className='hover:scale-105 transition-transform duration-300 rounded-full'
                         priority
                     />
                 </div>
