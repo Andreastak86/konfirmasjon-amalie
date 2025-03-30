@@ -24,7 +24,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className='text-gray-900 text-4xl lg:text-7xl font-bold text-center mt-6 font-playfair'
+                className='text-text-dark text-4xl lg:text-7xl font-bold text-center mt-6 font-playfair'
             >
                 Konfirmasjon
             </motion.h1>
@@ -37,7 +37,7 @@ export default function Home() {
                     className='relative w-64 h-64 sm:w-64 sm:h-64 overflow-hidden rounded-full shadow-2xl ring-4 ring-purple-300 ring-opacity-50'
                 >
                     <Image
-                        src='/amalie.jpg'
+                        src='/amimg.jpeg'
                         alt='Konfirmantbilde'
                         fill
                         sizes='(max-width: 640px) 100vw, 256px'

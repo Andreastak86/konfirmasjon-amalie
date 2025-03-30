@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const phrases = [
     "Velkommen til Amalie sin konfirmasjon",
-    "10 mai 2025",
-    "Os Kyrkje kl 13:45",
-    "Selskap kl 16:00",
+    "...10 mai 2025",
+    "...Os Kyrkje kl 13:45",
+    "...Selskap kl 16:00",
 ];
 
 export default function Typewriter() {
@@ -31,7 +31,7 @@ export default function Typewriter() {
             }
         };
 
-        const timeout = setTimeout(handleTyping, isDeleting ? 50 : 120);
+        const timeout = setTimeout(handleTyping, isDeleting ? 150 : 250);
         return () => clearTimeout(timeout);
     }, [charIndex, isDeleting, index]);
 
