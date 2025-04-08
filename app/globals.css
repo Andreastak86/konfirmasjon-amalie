@@ -37,9 +37,6 @@ body {
     min-height: 100vh; /* Sikrer at hele viewport-høyden dekkes */
 }
 
-h1 {
-    font-size: 32px;
-}
 h2 {
     font-size: 24px;
 }

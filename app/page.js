@@ -24,7 +24,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className='text-text-dark text-4xl lg:text-7xl font-bold text-center mt-6 font-playfair'
+                className='text-text-dark text-4xl lg:text-7xl font-bold text-center mt-6 font-playfair [text-shadow:2px_2px_4px_rgba(0,0,0,0.5)]'
             >
                 Konfirmasjon
             </motion.h1>
@@ -50,7 +50,7 @@ export default function Home() {
                     />
                 </motion.div>
             </div>
-            <div className='flex flex-col items-center text-gray-900 font-bold'>
+            <div className='flex flex-col items-center text-gray-900 font-bold max-w-[90%] mx-auto'>
                 <Typewriter />
             </div>
 

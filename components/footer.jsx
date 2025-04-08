@@ -6,7 +6,7 @@ const Footer = () => {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const targetDate = new Date("2025-05-10T00:00:00");
+            const targetDate = new Date("2025-05-10T13:45:00");
             const now = new Date();
             const timeDiff = targetDate - now;
 
