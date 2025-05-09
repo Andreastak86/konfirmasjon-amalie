@@ -32,7 +32,7 @@ const Footer = () => {
 
     return (
         <footer className='bg-purple-700 text-white text-center py-4'>
-            <p>Laget med 🥰 av pappa</p>
+            <p>Laget med 🩷 av pappa</p>
             <p>&copy; {new Date().getFullYear()}</p>
             <p>Nå er det: {timeLeft} til konfirmasjon</p>
         </footer>

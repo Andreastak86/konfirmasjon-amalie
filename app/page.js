@@ -50,7 +50,7 @@ export default function Home() {
                     />
                 </motion.div>
             </div>
-            <div className='flex flex-col items-center text-gray-900 font-bold max-w-[90%] mx-auto'>
+            <div className='flex flex-col items-center text-gray-900 font-bold max-w-[90%] mx-auto min-h-[5rem] text-center'>
                 <Typewriter />
             </div>
 

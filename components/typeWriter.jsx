@@ -36,7 +36,7 @@ export default function Typewriter() {
     }, [charIndex, isDeleting, index]);
 
     return (
-        <p className='text-text-dark text-xl md:text-4xl sm:text-md font-mono text-center my-16  text-ellipsis'>
+        <p className='text-text-dark text-xl md:text-4xl sm:text-md font-mono text-center mx-auto max-w-xs sm:max-w-md md:max-w-3xl min-h-[4.5rem] sm:min-h-[3rem] my-16 leading-snug'>
             {currentText}
         </p>
     );
