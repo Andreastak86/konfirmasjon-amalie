@@ -2,17 +2,16 @@
 import { useEffect, useState } from "react";
 
 const Footer = () => {
-    const [timeLeft, setTimeLeft] = useState("");
+    const [timeSince, setTimeSince] = useState("");
 
     useEffect(() => {
         const interval = setInterval(() => {
-            const targetDate = new Date("2025-05-10T13:45:00");
+            const eventDate = new Date("2025-05-10T13:45:00");
             const now = new Date();
-            const timeDiff = targetDate - now;
+            const timeDiff = now - eventDate;
 
             if (timeDiff <= 0) {
-                clearInterval(interval);
-                setTimeLeft("The event has arrived!");
+                setTimeSince("Konfirmasjonen er akkurat nå!");
             } else {
                 const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor(
@@ -21,11 +20,11 @@ const Footer = () => {
                 const minutes = Math.floor(
                     (timeDiff % (1000 * 60 * 60)) / (1000 * 60)
                 );
-                setTimeLeft(
-                    `${days} dager, ${hours} timer, og ${minutes} minutter`
+                setTimeSince(
+                    `${days} dager, ${hours} timer og ${minutes} minutter siden konfirmasjonen`
                 );
             }
-        }, 1000);
+        }, 60000); // Oppdater hvert minutt – ikke hvert sekund, siden det er ettertid
 
         return () => clearInterval(interval);
     }, []);
@@ -34,7 +33,7 @@ const Footer = () => {
         <footer className='bg-purple-700 text-white text-center py-4'>
             <p>Laget med 🩷 av pappa</p>
             <p>&copy; {new Date().getFullYear()}</p>
-            <p>Nå er det: {timeLeft} til konfirmasjon</p>
+            <p>{timeSince}</p>
         </footer>
     );
 };
