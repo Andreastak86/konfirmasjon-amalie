@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../lib/supabaseClient";
+import { Plus, Minus } from "lucide-react";
 
 export default function RSVPForm() {
     const [formData, setFormData] = useState({
@@ -12,6 +13,12 @@ export default function RSVPForm() {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
+    };
+
+    const handleCounterChange = (field, amount) => {
+        // Prevent negative values
+        const newValue = Math.max(0, formData[field] + amount);
+        setFormData({ ...formData, [field]: newValue });
     };
 
     const handleSubmit = async (e) => {
@@ -48,37 +55,58 @@ export default function RSVPForm() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className='w-full p-2 border border-purple-300 rounded'
+                    className='w-full p-2 border border-purple-300 rounded text-black'
                 />
             </div>
+
+            {/* Mobilvennlig tallvelger for voksne */}
             <div className='mb-4'>
-                <label htmlFor='adults' className='block text-purple-600'>
-                    Antall voksne:
-                </label>
-                <input
-                    type='number'
-                    id='adults'
-                    name='adults'
-                    value={formData.adults}
-                    onChange={handleChange}
-                    min='0'
-                    className='w-full p-2 border border-purple-300 rounded'
-                />
+                <label className='block text-purple-600'>Antall voksne:</label>
+                <div className='flex items-center'>
+                    <button
+                        type='button'
+                        onClick={() => handleCounterChange("adults", -1)}
+                        className='bg-purple-500 text-white w-10 h-10 rounded-l flex items-center justify-center'
+                    >
+                        <Minus size={18} />
+                    </button>
+                    <div className='flex-1 h-10 border-t border-b border-purple-300 flex items-center justify-center text-black bg-white'>
+                        {formData.adults}
+                    </div>
+                    <button
+                        type='button'
+                        onClick={() => handleCounterChange("adults", 1)}
+                        className='bg-purple-500 text-white w-10 h-10 rounded-r flex items-center justify-center'
+                    >
+                        <Plus size={18} />
+                    </button>
+                </div>
             </div>
+
+            {/* Mobilvennlig tallvelger for barn */}
             <div className='mb-4'>
-                <label htmlFor='children' className='block text-purple-600'>
-                    Antall barn:
-                </label>
-                <input
-                    type='number'
-                    id='children'
-                    name='children'
-                    value={formData.children}
-                    onChange={handleChange}
-                    min='0'
-                    className='w-full p-2 border border-purple-300 rounded'
-                />
+                <label className='block text-purple-600'>Antall barn:</label>
+                <div className='flex items-center'>
+                    <button
+                        type='button'
+                        onClick={() => handleCounterChange("children", -1)}
+                        className='bg-purple-500 text-white w-10 h-10 rounded-l flex items-center justify-center'
+                    >
+                        <Minus size={18} />
+                    </button>
+                    <div className='flex-1 h-10 border-t border-b border-purple-300 flex items-center justify-center text-black bg-white'>
+                        {formData.children}
+                    </div>
+                    <button
+                        type='button'
+                        onClick={() => handleCounterChange("children", 1)}
+                        className='bg-purple-500 text-white w-10 h-10 rounded-r flex items-center justify-center'
+                    >
+                        <Plus size={18} />
+                    </button>
+                </div>
             </div>
+
             <div className='mb-4'>
                 <label htmlFor='allergies' className='block text-purple-600'>
                     Matallergier:
@@ -89,7 +117,7 @@ export default function RSVPForm() {
                     value={formData.allergies}
                     onChange={handleChange}
                     placeholder='Skriv inn eventuelle matallergier her'
-                    className='w-full p-2 border border-purple-300 rounded'
+                    className='w-full p-2 border border-purple-300 rounded text-black'
                 />
             </div>
             <button
@@ -101,5 +129,3 @@ export default function RSVPForm() {
         </form>
     );
 }
-
-//remebmer CATHA

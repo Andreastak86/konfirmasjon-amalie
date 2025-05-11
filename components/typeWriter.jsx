@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const phrases = [
     "Velkommen til Amalie sin konfirmasjon",
-    "10 mai 2025",
-    "Os Kyrkje kl 13:45",
-    "Selskap kl 16:00",
+    "...10 mai 2025",
+    "...Os Kyrkje kl 13:45",
+    "...Selskap kl 16:00",
 ];
 
 export default function Typewriter() {
@@ -31,12 +31,12 @@ export default function Typewriter() {
             }
         };
 
-        const timeout = setTimeout(handleTyping, isDeleting ? 50 : 120);
+        const timeout = setTimeout(handleTyping, isDeleting ? 150 : 250);
         return () => clearTimeout(timeout);
     }, [charIndex, isDeleting, index]);
 
     return (
-        <p className='text-text-dark text-xl md:text-4xl font-mono text-center my-16 border-r-4 border-white pr-2 min-h-[40px]'>
+        <p className='text-text-dark text-xl md:text-4xl sm:text-md font-mono text-center mx-auto max-w-xs sm:max-w-md md:max-w-3xl min-h-[4.5rem] sm:min-h-[3rem] my-16 leading-snug'>
             {currentText}
         </p>
     );
