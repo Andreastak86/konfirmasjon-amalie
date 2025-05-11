@@ -54,6 +54,26 @@ export default function Home() {
                 <Typewriter />
             </div>
 
+            {/* Del bilder seksjon */}
+            <div className='flex flex-col items-center text-center my-16 px-4'>
+                <h2 className='text-xl font-semibold text-purple-800 mb-2'>
+                    Har du bilder fra dagen?
+                </h2>
+                <p className='text-gray-700 mb-4 max-w-xl'>
+                    Vi hadde satt stor pris på om du vil dele noen av dine
+                    bilder med oss 🩷🩷🩷 Klikk på knappen under for å laste opp
+                    til vårt felles fotoalbum.
+                </p>
+                <a
+                    href='https://photos.google.com/album/AF1QipPrmCm3Fc4RUkY_zW0xwKZqoPVomZxzbE7dABb5' // <-- bytt ut med ditt ekte album
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full shadow-lg transition'
+                >
+                    📸 Last opp bilder her
+                </a>
+            </div>
+
             {/* Seksjon for kartene */}
             <section className='container mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 px-6 my-16'>
                 <motion.div
