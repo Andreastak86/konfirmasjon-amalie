@@ -65,7 +65,7 @@ export default function Home() {
                     til vårt felles fotoalbum.
                 </p>
                 <a
-                    href='https://photos.google.com/album/AF1QipPrmCm3Fc4RUkY_zW0xwKZqoPVomZxzbE7dABb5' // <-- bytt ut med ditt ekte album
+                    href='https://photos.app.goo.gl/NK4NxQb6JaaVC1zJ7' // <-- bytt ut med ditt ekte album
                     target='_blank'
                     rel='noopener noreferrer'
                     className='bg-pink-600 hover:bg-pink-700 text-white font-medium px-6 py-3 rounded-full shadow-lg transition'
