@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import BuyMeACoffeeLink from "./BuyMeACoffeeLink";
 
 const Footer = () => {
     const [timeSince, setTimeSince] = useState("");
@@ -34,6 +35,7 @@ const Footer = () => {
             <p>Laget med 🩷 av pappa</p>
             <p>&copy; {new Date().getFullYear()}</p>
             <p>{timeSince}</p>
+            <BuyMeACoffeeLink />
         </footer>
     );
 };
